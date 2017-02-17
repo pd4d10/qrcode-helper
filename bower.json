@@ -2,7 +2,9 @@
   "name": "qrcode-helper",
   "private": true,
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "qrcodejs": "https://github.com/davidshimjs/qrcodejs"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"

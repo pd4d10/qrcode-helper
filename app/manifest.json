@@ -11,6 +11,7 @@
   "background": {
     "scripts": [
       "scripts/chromereload.js",
+      "bower_components/qrcode.js/lib/qrcode.min.js",
       "scripts/background.js"
     ]
   },
@@ -22,6 +23,7 @@
     "bookmarks",
     "clipboardRead",
     "clipboardWrite",
+    "contextMenus",
     "contentSettings",
     "cookies",
     "*://*.google.com/",
