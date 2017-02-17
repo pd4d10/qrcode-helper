@@ -6,5 +6,11 @@
   "appDescription": {
     "message": "My Chrome Extension",
     "description": "The description of the application"
+  },
+  "generate": {
+    "message": "Generate QRCode"
+  },
+  "scan": {
+    "message": "Scan QRCode"
   }
 }

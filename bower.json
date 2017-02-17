@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "dependencies": {
-    "qrcodejs": "https://github.com/davidshimjs/qrcodejs"
   },
   "devDependencies": {
     "chai": "^3.5.0",
