@@ -14,18 +14,25 @@ document.body.appendChild($container)
 chrome.runtime.onMessage.addListener(message => {
   console.log(message)
 
-  const { info } = message
-  if (typeof info.selectionText === 'string') {
-    console.log(info)
-    // require('../lib/qrcode', qrcode => {
-      // new window.QRCode(DOM_ID, info.selectionText)
-    // })
+  switch (message.type) {
+    case 'generate': {
+      if (typeof message.info.selectionText === 'string') {
+        // require('../lib/qrcode', qrcode => {
+          // new window.QRCode(DOM_ID, info.selectionText)
+        // })
 
-    // https://github.com/kazuhikoarase/qrcode-generator/blob/master/js/sample.js
-    var qr = qrcode(4, 'M');
-    qr.addData(info.selectionText);
-    qr.make();
+        // https://github.com/kazuhikoarase/qrcode-generator/blob/master/js/sample.js
+        var qr = qrcodeGenerator(4, 'M');
+        qr.addData(message.info.selectionText);
+        qr.make();
 
-    $container.innerHTML = qr.createImgTag()
+        $container.innerHTML = qr.createImgTag()
+      }
+    }
+    case 'read': {
+      alert(message.text)
+    }
+    default:
+      break
   }
 })

@@ -10,7 +10,7 @@
   "generate": {
     "message": "Generate QRCode"
   },
-  "scan": {
-    "message": "Scan QRCode"
+  "read": {
+    "message": "Read QRCode"
   }
 }
