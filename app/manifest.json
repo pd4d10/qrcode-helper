@@ -49,6 +49,9 @@
         "http://*/*",
         "https://*/*"
       ],
+      "css": [
+        "styles/content.css"
+      ],
       "js": [
         "lib/qrcode.js",
         "scripts/contentscript.js"
