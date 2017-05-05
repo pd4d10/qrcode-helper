@@ -7,6 +7,20 @@ function showDialog() {
     const $dialog = document.createElement('dialog')
     $dialog.id = DOM_ID
     document.body.appendChild($dialog)
+
+    // Click backdrop to close dialog
+    // https://stackoverflow.com/questions/25864259/how-to-close-the-new-html-dialog-tag-by-clicking-on-its-backdrop
+    $dialog.addEventListener('click', function (event) {
+      var rect = $dialog.getBoundingClientRect();
+      var isInDialog = rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width
+
+      if (!isInDialog) {
+        $dialog.close()
+      }
+    });
   }
 
   document.getElementById(DOM_ID).showModal()

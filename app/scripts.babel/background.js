@@ -11,7 +11,7 @@ console.log('\'Allo \'Allo! Event Page for Browser Action');
 // Generate QRCode
 chrome.contextMenus.create({
   title: chrome.i18n.getMessage('generate'),
-  contexts: ['page', 'selection', 'link'],
+  contexts: ['selection'],
   onclick(info, tab) {
     console.log(info)
 
