@@ -1,32 +1,32 @@
-import qrcode from 'qrcode-generator'
+function openCodePopup(text: string) {
+  chrome.windows.create({
+    url: chrome.extension.getURL(
+      'dist/popup.html?code=' + encodeURIComponent(text),
+    ),
+    type: 'panel',
+    width: 480,
+    height: 480,
+    // state: 'docked',
+  })
+}
 
-chrome.runtime.onInstalled.addListener(details => {
-  console.log('previousVersion', details.previousVersion)
+// generate current url
+chrome.browserAction.onClicked.addListener(tab => {
+  console.log(tab)
+  if (tab.url) {
+    openCodePopup(tab.url)
+  }
 })
 
-chrome.browserAction.setBadgeText({ text: "'Allo" })
-
-console.log("'Allo 'Allo! Event Page for Browser Action")
-
-// Generate QRCode
+// generate from selection
 chrome.contextMenus.create({
   title: chrome.i18n.getMessage('generate'),
   contexts: ['selection'],
-  onclick(info, tab) {
+  onclick(info) {
     console.log(info)
-
-    chrome.tabs.query(
-      {
-        active: true,
-        currentWindow: true,
-      },
-      tabs => {
-        chrome.tabs.sendMessage(tabs[0].id, {
-          type: 'generate',
-          info,
-        })
-      },
-    )
+    if (info.selectionText) {
+      openCodePopup(info.selectionText)
+    }
   },
 })
 
@@ -34,7 +34,7 @@ chrome.contextMenus.create({
 chrome.contextMenus.create({
   title: chrome.i18n.getMessage('read'),
   contexts: ['image'],
-  onclick(info, tab) {
+  onclick(info) {
     // Send decode text to content script
     qrcode.callback = text => {
       chrome.tabs.query(
