@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "qrcode helper"
+  },
+  "description": {
+    "message": "My Chrome Extension"
+  },
+  "generate": {
+    "message": "Generate QRCode"
+  },
+  "read": {
+    "message": "Read QRCode"
+  }
+}
