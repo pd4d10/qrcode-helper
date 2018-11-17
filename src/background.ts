@@ -3,7 +3,7 @@ function openCodePopup(text: string) {
     url: chrome.extension.getURL(
       'dist/popup.html?code=' + encodeURIComponent(text),
     ),
-    type: 'panel',
+    type: 'popup',
     width: 480,
     height: 480,
     // state: 'docked',
@@ -30,27 +30,21 @@ chrome.contextMenus.create({
   },
 })
 
-// Read QRCode
+// read from image
 chrome.contextMenus.create({
   title: chrome.i18n.getMessage('read'),
   contexts: ['image'],
   onclick(info) {
-    // Send decode text to content script
-    qrcode.callback = text => {
-      chrome.tabs.query(
-        {
-          active: true,
-          currentWindow: true,
-        },
-        tabs => {
-          chrome.tabs.sendMessage(tabs[0].id, {
-            type: 'read',
-            text,
-          })
-        },
-      )
+    console.log(info)
+    if (info.srcUrl) {
+      chrome.windows.create({
+        url: chrome.extension.getURL(
+          'dist/decode.html?url=' + encodeURIComponent(info.srcUrl),
+        ),
+        type: 'popup',
+        width: 480,
+        height: 480,
+      })
     }
-
-    qrcode.decode(info.srcUrl)
   },
 })

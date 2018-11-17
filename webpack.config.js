@@ -11,6 +11,7 @@ const config = {
   entry: {
     background: './src/background',
     popup: './src/popup',
+    decode: './src/decode',
     options: './src/options',
   },
   output: {
@@ -38,6 +39,11 @@ const config = {
       title: 'QRCode helper',
       filename: 'popup.html',
       chunks: ['popup'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'QRCode helper',
+      filename: 'decode.html',
+      chunks: ['decode'],
     }),
     new HtmlWebpackPlugin({
       title: 'QRCode helper',

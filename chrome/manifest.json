@@ -10,7 +10,7 @@
     "scripts": ["dist/background.js"]
   },
   "default_locale": "en",
-  "permissions": ["tabs", "contextMenus", "storage"],
+  "permissions": ["<all_urls>", "contextMenus", "storage"],
   "options_ui": {
     "page": "dist/options.html",
     "chrome_style": true
