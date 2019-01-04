@@ -1,9 +1,9 @@
 {
   "name": {
-    "message": "qrcode helper"
+    "message": "QRCode Helper"
   },
   "description": {
-    "message": "My Chrome Extension"
+    "message": "Read and generate QRCode"
   },
   "generate": {
     "message": "Generate QRCode"

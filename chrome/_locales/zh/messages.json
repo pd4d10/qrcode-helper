@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "二维码助手"
+  },
+  "description": {
+    "message": "识别和生成二维码"
+  },
+  "generate": {
+    "message": "生成二维码"
+  },
+  "read": {
+    "message": "识别二维码"
+  }
+}
