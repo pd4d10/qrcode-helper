@@ -5,6 +5,9 @@
   "description": {
     "message": "识别和生成二维码"
   },
+  "generateCurrent": {
+    "message": "生成当前页面 URL 的二维码"
+  },
   "generate": {
     "message": "生成二维码"
   },

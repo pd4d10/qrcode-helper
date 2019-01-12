@@ -5,6 +5,9 @@
   "description": {
     "message": "Read and generate QRCode"
   },
+  "generateCurrent": {
+    "message": "Generate QRCode for current URL"
+  },
   "generate": {
     "message": "Generate QRCode"
   },

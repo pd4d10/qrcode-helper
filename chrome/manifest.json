@@ -20,7 +20,6 @@
     "default_icon": {
       "38": "icon.png"
     },
-    "default_title": "qrcode helper",
-    "default_popup": "dist/popup.html"
+    "default_title": "__MSG_generateCurrent__"
   }
 }
