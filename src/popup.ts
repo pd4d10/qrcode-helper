@@ -3,6 +3,7 @@ import qrcode from 'qrcode-generator'
 function main() {
   const params = new URLSearchParams(location.search)
   const code = params.get('code')
+  console.log(code)
 
   if (!code) return
 
@@ -11,7 +12,7 @@ function main() {
   document.body.style.height = '100%'
   document.body.style.margin = '0'
 
-  const qr = qrcode(4, 'L')
+  const qr = qrcode(0, 'M')
   qr.addData(code)
   qr.make()
   document.body.innerHTML = qr.createSvgTag()
