@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "webpack",
-    "build": "webpack --config webpack.config.production.js"
+    "build": "webpack --config webpack.config.production.js",
+    "package": "cd chrome && cp ../LICENSE . && zip --exclude .DS_Store -r ../chrome.zip *"
   }
 }
