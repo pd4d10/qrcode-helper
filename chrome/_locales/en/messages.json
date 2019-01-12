@@ -13,5 +13,8 @@
   },
   "read": {
     "message": "Read QRCode"
+  },
+  "generateFail": {
+    "message": "Fail to generate QRCode, error message:\n"
   }
 }

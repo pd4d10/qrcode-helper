@@ -13,5 +13,8 @@
   },
   "read": {
     "message": "识别二维码"
+  },
+  "generateFail": {
+    "message": "生成二维码失败，错误信息：\n"
   }
 }

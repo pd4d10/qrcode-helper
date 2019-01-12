@@ -12,13 +12,19 @@ function main() {
   document.body.style.height = '100%'
   document.body.style.margin = '0'
 
-  const qr = qrcode(0, 'M')
-  qr.addData(code)
-  qr.make()
-  document.body.innerHTML = qr.createSvgTag()
-  const svg = document.querySelector('svg')!
-  svg.style.width = '100%'
-  svg.style.height = '100%'
+  try {
+    const qr = qrcode(0, 'M')
+    qr.addData(code)
+    qr.make()
+    document.body.innerHTML = qr.createSvgTag()
+    const svg = document.querySelector('svg')!
+    svg.style.width = '100%'
+    svg.style.height = '100%'
+  } catch (err) {
+    console.error(err)
+    alert(chrome.i18n.getMessage('generateFail') + err)
+    window.close()
+  }
 }
 
 main()
