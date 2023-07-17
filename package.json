@@ -24,8 +24,10 @@
     "typescript": "^5.1.6"
   },
   "manifest": {
+    "host_permissions": [
+      "<all_urls>"
+    ],
     "permissions": [
-      "<all_urls>",
       "contextMenus"
     ]
   },
