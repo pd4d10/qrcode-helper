@@ -11,7 +11,7 @@ function openCodePopup(text: string) {
 }
 
 // generate current url
-chrome.browserAction.onClicked.addListener(tab => {
+chrome.browserAction.onClicked.addListener((tab) => {
   console.log(tab)
   if (tab.url) {
     openCodePopup(tab.url)
@@ -36,7 +36,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 // make context menu works with non-persistent background
 // https://stackoverflow.com/a/26246735
-chrome.contextMenus.onClicked.addListener(info => {
+chrome.contextMenus.onClicked.addListener((info) => {
   console.log(info)
 
   switch (info.menuItemId) {
