@@ -1,7 +1,7 @@
 function openCodePopup(text: string) {
   chrome.windows.create({
-    url: chrome.extension.getURL(
-      "dist/popup.html?code=" + encodeURIComponent(text)
+    url: chrome.runtime.getURL(
+      "tabs/popup.html?code=" + encodeURIComponent(text)
     ),
     type: "popup",
     width: 480,
@@ -11,7 +11,7 @@ function openCodePopup(text: string) {
 }
 
 // generate current url
-chrome.browserAction.onClicked.addListener((tab) => {
+chrome.action.onClicked.addListener((tab) => {
   console.log(tab);
   if (tab.url) {
     openCodePopup(tab.url);
@@ -47,8 +47,8 @@ chrome.contextMenus.onClicked.addListener((info) => {
     case "read":
       if (info.srcUrl) {
         chrome.windows.create({
-          url: chrome.extension.getURL(
-            "dist/decode.html?url=" + encodeURIComponent(info.srcUrl)
+          url: chrome.runtime.getURL(
+            "tabs/decode.html?url=" + encodeURIComponent(info.srcUrl)
           ),
           type: "popup",
           width: 480,
