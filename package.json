@@ -1,7 +1,7 @@
 {
   "name": "qrcode-helper",
-  "displayName": "QRCode Helper",
-  "description": "Read and generate QRCode",
+  "displayName": "__MSG_name__",
+  "description": "__MSG_description__",
   "homepage": "https://github.com/pd4d10/qrcode-helper",
   "version": "0.0.1",
   "private": true,
@@ -29,7 +29,10 @@
     ],
     "permissions": [
       "contextMenus"
-    ]
+    ],
+    "action": {
+      "default_title": "__MSG_generateCurrent__"
+    }
   },
   "packageManager": "pnpm@8.6.8"
 }
