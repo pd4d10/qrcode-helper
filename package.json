@@ -3,7 +3,7 @@
   "displayName": "__MSG_name__",
   "description": "__MSG_description__",
   "homepage": "https://github.com/pd4d10/qrcode-helper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "plasmo dev",
